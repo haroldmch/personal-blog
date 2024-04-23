@@ -28,7 +28,7 @@ http://localhost:3000
 ### Install
 
 ```bash
-npm i -D @typescript-eslint/parser@6.21.0 @typescript-eslint/eslint-plugin@7.0.0
+npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 ```bash
@@ -104,6 +104,14 @@ package-lock.json
   "prettier:format": "prettier --write .",
   "prettier:check": "prettier --check .",
 }
+```
+
+### Modify `settings.json` in VS
+
+```json
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 ```
 
 ---
