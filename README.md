@@ -109,9 +109,9 @@ package-lock.json
 ### Modify `settings.json` in VS
 
 ```json
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
 ```
 
 ---
