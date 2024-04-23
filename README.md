@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project
 
 ## Getting Started
 
-First, run the development server:
+**Step 0 (If not yet installed )**
+
+```bash
+npm i
+```
+
+**Step 1: Run, Barry, Run!**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Step 2: Party Hard *in local!**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+---
+## EsLint + Prettier
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm i -D @typescript-eslint/parser@6.21.0 @typescript-eslint/eslint-plugin@7.0.0
+```
 
-## Deploy on Vercel
+```bash
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-import-helpers
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Create or Modify `.eslintrc.json`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^next/", "module"],
+          "/^@/styles/",
+          "/^@/components/",
+          "/^@/lib/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  }
+}
+```
+
+### Create or Modify `.prettierrc.json`
+
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 120,
+  "tabWidth": 2
+}
+```
+
+### Create or Modify `.prettierignore`
+
+```
+.next
+next-env.d.ts
+node_module
+public
+yarn.lock
+package-lock.json
+```
+
+### Modify `package.json`
+
+```json
+"scripts":{
+  "eslint:format": "eslint --fix .",
+  "prettier:format": "prettier --write .",
+  "prettier:check": "prettier --check .",
+}
+```
+
+---
+
+### React Icons
+- https://react-icons.github.io/react-icons/ 
