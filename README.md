@@ -116,5 +116,17 @@ package-lock.json
 
 ---
 
-### React Icons
-- https://react-icons.github.io/react-icons/ 
+## Local env Variables
+
+1) Create the env variables on vercel
+
+2) Link the local code with vercel
+
+```bash
+npx vercel link
+```
+3) Pull the env file
+
+```bash
+npx vercel env pull ./.env.local
+```

@@ -5,7 +5,7 @@ import styles from './page.module.scss';
 export default function Home() {
   return (
     <main className={styles.test}>
-      Testing <SiDungeonsanddragons />
+      Testing - {process.env.NEXT_TEST} <SiDungeonsanddragons />
     </main>
   );
 }
