@@ -130,3 +130,58 @@ npx vercel link
 ```bash
 npx vercel env pull ./.env.local
 ```
+
+---
+
+## Install mongoose
+
+```bash
+npm install mongoose --save
+```
+
+### C.R.U.D
+| https://mongoosejs.com/docs/nextjs.html
+
+**Create**
+
+```bash
+npm install mongoose --save
+```
+
+**Read**
+
+```bash
+npm install mongoose --save
+```
+
+**Update**
+
+```bash
+npm install mongoose --save
+```
+
+**Delete**
+
+```bash
+npm install mongoose --save
+```
+
+---
+
+## Validation: Zod
+
+| https://zod.dev/?id=basic-usage
+
+Example: 
+
+```bash
+npm install mongoose --save
+```
+
+---
+
+## useForm
+| npm install react-hook-form
+
+Example:
+
