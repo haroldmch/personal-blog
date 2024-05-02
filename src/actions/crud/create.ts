@@ -8,16 +8,23 @@ const validation = z.object({
   password: z.string().min(6),
 });
 
+interface UserData {
+  name: string;
+  email: string;
+  password: string;
+  _id: string;
+}
+
 import dbConnect from '@/lib/dbConnect';
 
-export async function create(formData: FormData) {
+export async function create(data: UserData) {
   await dbConnect();
 
   try {
     const validated = validation.safeParse({
-      name: formData?.get('name'),
-      email: formData?.get('email'),
-      password: formData?.get('password'),
+      name: data?.name,
+      email: data?.email,
+      password: data?.password,
     });
 
     if (!validated.success) {

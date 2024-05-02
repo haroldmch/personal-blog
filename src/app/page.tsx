@@ -1,6 +1,6 @@
 import { SiDungeonsanddragons } from 'react-icons/si';
 
-import styles from './page.module.scss';
+import styles from './global.module.scss';
 
 export default function Home() {
   return (
