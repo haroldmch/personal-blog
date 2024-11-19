@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className={styles.base}>
       <h2>
-        Harold <SiDungeonsanddragons /> MCh :)
+        Harold <SiDungeonsanddragons /> MCh + Storybook
       </h2>
     </main>
   )
