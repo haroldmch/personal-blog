@@ -1,6 +1,6 @@
-import { SiDungeonsanddragons } from 'react-icons/si';
+import { SiDungeonsanddragons } from 'react-icons/si'
 
-import styles from './global.module.scss';
+import styles from './global.module.scss'
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
         Harold <SiDungeonsanddragons /> MCh :)
       </h2>
     </main>
-  );
+  )
 }

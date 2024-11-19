@@ -28,6 +28,7 @@
           "ignoreCase": true
         }
       }
-    ]
+    ],
+    "prettier/prettier": ["error", { "semi": false }]
   }
 }
