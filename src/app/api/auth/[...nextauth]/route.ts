@@ -8,6 +8,12 @@ const handler = NextAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
   ],
+  callbacks: {
+    async signIn({ user }) {
+      console.log({ user })
+      return true
+    },
+  },
   secret: process.env.NEXTAUTH_SECRET,
 })
 
