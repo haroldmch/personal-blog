@@ -1,3 +1,5 @@
+import { findUser } from "@/actions/db/user/read"
+import { IUser } from "@/models/User"
 import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 
@@ -10,8 +12,13 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
-      console.log({ user })
-      return true
+      if (user) {
+        const foundUser: IUser = await findUser(user.email)
+        // const foundUser: IUser = await findUser("test@domain.example")
+        return foundUser.email === user.email || false
+      } else {
+        return false
+      }
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
